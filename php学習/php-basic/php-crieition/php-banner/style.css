@@ -1,0 +1,5 @@
+.banner{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+/* バナーをランダムに持ってくるのはphpに任せて、それの位置はcssで調整する。 */
