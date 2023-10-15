@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>swiper</title>
+    <!--<head></head>内に貼り付け swiperのcss-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <style>
+      .swiper {
+        width: 800px;
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="img/001.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/002.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/003.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/004.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/005.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/006.jpg" alt="">
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+    <!-- swiperのjavascript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+        speed:1000,
+        // effect:'coverflow',
+        // slidesPerView:2,
+        // slidesPerGroup:2,
+        breakpoints:{
+          640:{
+            slidesPerView:2,
+            slidesPerGroup:2,
+          },
+          900:{
+            slidesPerView:3,
+            slidesPerGroup:3,
+          },
+        },
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+          type:'progressbar',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+          hide:true,
+        },
+      });
+    </script>
+  </body>
+</html>

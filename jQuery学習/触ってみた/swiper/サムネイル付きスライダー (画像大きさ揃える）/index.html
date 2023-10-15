@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>swiper2</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+      <style>
+        .swiper {
+          width: 900px;
+          max-width: 100%;
+        }
+        .swiper-slide img{
+          max-width: 100%;
+        }
+        .sub-swiper .swiper-slide img:hover{
+          cursor: pointer;
+        }
+      </style>
+  </head>
+  <body>
+    <!-- メインのスワイパー -->
+        <!-- Slider main container -->
+    <div class="swiper main-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+              <img src="img/013.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+              <img src="img/014.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+              <img src="img/015.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+              <img src="img/016.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+              <img src="img/017.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+              <img src="img/018.jpg" alt="">
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <!-- サブのスワイパー -->
+    <div class="swiper sub-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+              <img src="img/013.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+              <img src="img/014.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+              <img src="img/015.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+              <img src="img/016.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+              <img src="img/017.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+              <img src="img/018.jpg" alt="">
+          </div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      const subSwiper = new Swiper('.sub-swiper', {
+        // Optional parameters
+        loop: true,
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+      const mainSwiper = new Swiper('.main-swiper', {
+        // Optional parameters
+        // direction: 'horizontal',は初期値なので書かなくてもok
+        // direction: 'horizontal',
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        thumbs:{
+          swiper:subSwiper,
+        },
+      });
+    </script>
+  </body>
+</html>
+

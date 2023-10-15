@@ -1,0 +1,42 @@
+.section .oneArea {
+  margin-bottom: 200px;
+}
+.section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0 0 100px;
+  padding: 0;
+}
+
+.section ul li {
+  width: calc(100% / 6);
+  text-align: center;
+}
+
+.section ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  background: #333;
+}
+
+.section .oneArea .one_title {
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  background: #333;
+}
+
+.section .oneArea a.button {
+  display: block;
+  font-size: 12px;
+  color: #333333;
+  text-align: center;
+  background: #f2f2f2;
+  padding: 10px;
+  text-decoration: none;
+  margin-top: 40px;
+}

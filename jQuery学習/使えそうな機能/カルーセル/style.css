@@ -1,0 +1,25 @@
+img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.colusel{
+  visibility: hidden;
+}
+
+.colusel.slick-initialized{
+  visibility: visible;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-prev,.slick-next{
+  z-index: 1;
+}

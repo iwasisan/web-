@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+</head>
+<body>
+<div class="underline-Area">
+	<dl class="faq">
+    <dt>ウマ娘プリティーダービーのアイコンに載ってるウマ娘は？</dt>
+    <dd>スペシャルウィーク</dd>
+    <dt>グッドルッキングウマ娘と言えば</dt>
+    <dd>エイシンフラッシュ、ユキノビジン、ゴールドシチー</dd>
+  </dl>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script>
+  $(function(){
+    $(".faq dt").on("click",function(){
+      $(this).next().slideToggle(); //
+      $(this).toggleClass("open");
+    })
+  });
+</script>
+</body>
+</html>

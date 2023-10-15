@@ -1,0 +1,12 @@
+dd{
+  margin-left: 0;
+  display: none;
+}
+
+dt::after{
+  content: "▽";
+}
+
+dt.open::after{
+  content: "△";
+}

@@ -1,0 +1,24 @@
+body{
+  background-color: rgb(221, 221, 221);
+}
+
+
+li{
+  list-style: none;
+  margin-bottom: 100px;
+}
+
+.space{
+  text-align: center;
+  padding: 500px 0;
+}
+
+/* スクロール時のフェードイン */
+li {
+  opacity: 0;
+  transition: 1s;
+}
+
+.fade-in {
+  opacity: 1;
+}
