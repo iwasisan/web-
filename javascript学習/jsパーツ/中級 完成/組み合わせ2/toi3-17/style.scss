@@ -1,0 +1,15 @@
+
+
+#stalker {
+    pointer-events: none;
+    position: fixed;
+    top: -12px;     //座標調節（カーソル位置と円の中心を合わせる）
+    left: -12px;    //座標調節（カーソル位置と円の中心を合わせる）
+    transition: transform 0.2s;  //ちょっと遅れてついてくるように
+    transition-timing-function: ease-out;
+    z-index: 999;
+}
+
+img{
+  width: 40px;
+}

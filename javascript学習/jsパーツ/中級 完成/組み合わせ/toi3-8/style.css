@@ -1,0 +1,15 @@
+li{
+  list-style: none;
+}
+
+.as{
+  object-fit: cover;
+  width: 100px;
+  border-radius: 50%;
+  margin: 0;
+}
+
+ul{
+  display: flex;
+  column-gap: 20px;
+}

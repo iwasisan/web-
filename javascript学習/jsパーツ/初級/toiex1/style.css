@@ -1,0 +1,30 @@
+.list {
+  padding-left: 20px;
+}
+
+.item {
+  list-style-type: none;
+  position: relative;
+  width: 100%;
+  background-color: #ddd;
+  padding: 30px 10px 10px;
+  margin-bottom: 25px;
+}
+.item::after {
+  position: absolute;
+  top: -15px;
+  left: -5px;
+  padding: 5px;
+  color: #fff;
+}
+.item[data-type=rock]::after {
+  background-color: #00f;
+  content: "ROCK";
+}
+.item[data-type=techno]::after {
+  background-color: #808;
+  content: "TECHNO";
+}
+.item__name {
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */

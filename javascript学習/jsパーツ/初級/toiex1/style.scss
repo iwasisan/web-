@@ -1,0 +1,34 @@
+.list{
+  padding-left:20px;
+}
+
+.item{
+  list-style-type:none;
+  position:relative;
+  width:100%;
+  background-color:#ddd;
+  padding:30px 10px 10px;
+  margin-bottom:25px;
+  
+  &::after{
+    position:absolute;
+    top:-15px;
+    left:-5px;
+    padding:5px;
+    color:#fff;
+  }
+  
+  &[data-type="rock"]::after{
+    background-color:#00f;
+    content:"ROCK";
+  }
+  
+  &[data-type="techno"]::after{
+    background-color:#808;
+    content:"TECHNO";
+  }
+  
+  &__name{
+    margin:0;
+  }
+}

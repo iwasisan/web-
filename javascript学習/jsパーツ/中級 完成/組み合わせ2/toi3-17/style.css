@@ -1,0 +1,13 @@
+#stalker {
+  pointer-events: none;
+  position: fixed;
+  top: -12px;
+  left: -12px;
+  transition: transform 0.2s;
+  transition-timing-function: ease-out;
+  z-index: 999;
+}
+
+img {
+  width: 40px;
+}/*# sourceMappingURL=style.css.map */

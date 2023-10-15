@@ -1,0 +1,24 @@
+.marquee {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  gap: 1rem;
+  font-size: 3rem;
+}
+
+.marquee-inner {
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateY(0);}
+  100% { transform: translateY(-100%);}
+}
+
+.text1{
+  writing-mode: vertical-rl;
+}
+
+.text2{
+  writing-mode: vertical-rl;
+}

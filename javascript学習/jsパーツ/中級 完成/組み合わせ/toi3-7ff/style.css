@@ -1,0 +1,17 @@
+li{
+  list-style: none;
+}
+
+.flex{
+  display: flex;
+  column-gap: 30px;
+}
+
+.toggle{
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-2{
+  flex-direction: column;
+}

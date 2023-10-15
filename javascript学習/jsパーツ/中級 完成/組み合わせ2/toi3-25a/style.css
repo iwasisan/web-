@@ -1,0 +1,41 @@
+/* content:attr()  */
+/* タグのdata属性やtitle属性を取得して表示する */
+
+button:disabled{
+  background-color: rgb(99, 98, 98);
+}
+
+.sample_link12 {
+  display: flex;
+  flex-flow: column;
+  color: rgb(0, 82, 27);
+  display: inline-block;
+  perspective: 10000px;
+}
+
+p {
+  width: fit-content;
+  display: block;
+  position: relative;
+  padding: 10px 2px;
+  transition: all 0.3s;
+  transform-origin: 50% 0%;
+  transform-style: preserve-3d;
+}
+
+p:hover{
+  background: rgb(255, 255, 255);
+  transform: translate3d(0px, 10px, -30px) rotateX(90deg);
+}
+
+p:after {
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgb(0, 82, 27);
+  background: rgb(255, 255, 255);
+  transform-origin: 50% 0%;
+  transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+}

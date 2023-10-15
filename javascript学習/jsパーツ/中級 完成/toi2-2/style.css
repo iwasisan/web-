@@ -1,0 +1,11 @@
+.title{
+    font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+    text-align: center;
+    margin-top: 300px;
+    font-size: 100px;
+}
+#color-change{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+}

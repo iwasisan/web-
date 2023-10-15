@@ -1,0 +1,35 @@
+.mask-bg{
+    transition: all 0.3s;
+    margin: 0px;
+    padding: 0px;
+    z-index: 2;
+}
+
+.mask{
+    background-color: rgb(122, 131, 252);
+    width: min-content;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.anim{
+    background-color: transparent;
+    transform-origin: left center;
+    animation: bg 2.6s cubic-bezier(.17,.91,.51,.12) forwards;
+}
+
+@keyframes bg {
+    0% {
+    opacity: 0;
+    transform: scaleX(0) translateX(-5%);
+    }
+    30% {
+    transform: scaleX(1) translateX(0);
+    }
+    100% {
+    transform: scaleX(1) translateX(0);
+    }
+    30%, 100% {
+    opacity: 1;
+    }
+}

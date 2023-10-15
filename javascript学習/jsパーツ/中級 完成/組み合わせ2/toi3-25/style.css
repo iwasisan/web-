@@ -1,0 +1,44 @@
+/* content:attr()  */
+/* タグのdata属性やtitle属性を取得して表示する */
+.sample_link12{
+  display: flex;
+  flex-flow: column;
+}
+
+
+a {
+  color: rgb(0, 82, 27);
+  text-decoration: none;
+  width: fit-content;
+  display: inline-block;
+  overflow: hidden;
+  perspective: 400px;
+  perspective-origin: 50% 50%;
+}
+
+a span {
+  display: block;
+  position: relative;
+  padding: 10px 2px;
+  transition: all 300ms ease;
+  transform-origin: 50% 0%;
+  transform-style: preserve-3d;
+}
+
+a:hover span {
+  background: rgb(255, 255, 255);
+  transform: translate3d(0px, 10px, -30px) rotateX(90deg);
+}
+
+a span:after {
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 2px;
+  color: rgb(0, 82, 27);
+  background: rgb(255, 255, 255);
+  transform-origin: 50% 0%;
+  transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+}

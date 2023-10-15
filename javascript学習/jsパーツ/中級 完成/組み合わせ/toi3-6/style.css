@@ -1,0 +1,14 @@
+.val1{
+  margin-left: 10%;
+}
+
+.val2{
+  margin-top: 10%;
+}
+
+.point{
+  cursor:pointer;
+  margin-left: 50px;
+  position: absolute;
+  top: 50px;
+}

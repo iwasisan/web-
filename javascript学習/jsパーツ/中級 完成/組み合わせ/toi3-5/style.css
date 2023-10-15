@@ -1,0 +1,66 @@
+li{
+  list-style: none;
+}
+
+
+.flex{
+  display: flex;
+  column-gap: 30px;
+}
+
+.toggle{
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-2{
+  flex-direction: column;
+}
+
+.a{
+  padding: 5px;
+  border: solid 1px rgb(255, 164, 179);
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 187, 232);
+}
+
+.basic{
+  font-size: 30px;
+  font-family: 'SimSun';
+  font-weight: 600;
+  color: rgb(17, 33, 255);
+}
+
+#font{
+  color: rgb(164, 68, 255);
+}
+
+.ki{
+  color: blueviolet;
+}
+
+
+.sort{
+  padding: 5px;
+  border: solid 1px rgb(255, 164, 179);
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 187, 232);
+}
+
+.fontchange{
+  padding: 5px;
+  border: solid 1px rgb(255, 164, 179);
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 187, 232);
+}
+
+.btnchange{
+  padding: 5px;
+  border: solid 1px rgb(255, 164, 179);
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 187, 232);
+}
