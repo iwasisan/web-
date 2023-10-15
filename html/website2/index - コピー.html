@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ひめじまん</title>
+    <meta charset="utf-8">
+    <meta name="description" content="姫路の紹介サイトです">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <!-- article２つ 、h1メインロゴ、h2項目の見出し等とする。-->
+      <article id="header_left">
+        <!--バナー、画像、文章纏め -->
+        <ul id="header_image">
+          <li><img src="images/bunner-1.png" alt="バナー"></li>
+          <li><img src="images/Himeji castle.jpg" alt="姫路城"></li>
+        </ul>
+        <h2>ひめじかんとは？</h2>
+        <p id="header_headline">
+          <span class="headline-text1">
+            あなたが旅に求めるものは、なんですか？<br>
+            それはきっと、そこにしかない時間。
+          </span>
+          <br>
+          <br>
+          <span class="headline-text2">
+            姫路のまちには<br>
+            だれもが名を知る圧倒的な景観も、<br>
+            そこで暮らす人に愛され続ける隠れ家もあります。<br>
+            心ひかれるままに味わってください。
+          </span>
+          <br>
+          <br>
+          <span class="headline-text3">
+            日ごろ身に着けた装いも、疲れも、<br>
+            「ひめじかん」に溶けていきます。
+          </span>
+          </p>
+      </article>
+      <!--ひめじかんのロゴ、のんさんのトップ画像、メニュー＋デジタルブックへのリンク  -->
+      <article id="header_right">
+        <div id="header_rogo">
+          <h1>
+            <span>HIME JIKAN</span>
+            <img src="images/rogo-main.png" title="ひめじかん" alt="ひめじかんロゴ">
+          </h1>
+        </div>
+        <img src="images/top.jpg" alt="トップ画像">
+        <!-- ハンバーガーメニューとデジタルブックへのリンク -->
+        <nav>
+          <button type="button" aria-controls="humbergerbutton" aria-expanded="false">
+            <span id="humbergerbutton">メニュー</span>
+          </button>
+          
+          <div id="header_link">
+            <a href="URL" title="デジタルブックへ"></a>
+            <span id="link_text1">もっと</span>
+            <span id="link_text2">姫路の魅力をつめこんだデジタルブックも発信中！</span>
+            <span id="link_text3">本</span>
+          </div>
+        </nav>
+      </article>
+    </header>
+
+    <main>
+      <!-- ムービーの見出し、ムービーへのリンク -->
+      <article id="movie_top">
+        <!-- ムービーの見出し -->
+        <section id="movie_headline">
+          <h2 id="movie_headline_text">
+            <span class="text_1">このまちには</span>
+            <span class="text_2">まだまだ知らない</span>
+            <span class="text_3">表情がいっぱい。</span>
+          </h2>
+          <img src="images/movie-top.jpg" alt="ムービートップ">
+        </section>
+        <!-- ムービーへのリンク -->
+            <section id="main_movie">
+              <nav class="movie_parts1">
+                <a href="URL" title="15秒の動画"></a>
+                <img src="images/movie-1.jpg" alt="15秒の動画">
+                <hr>
+                <p>
+                  MOVIE<br>
+                  <span class="main-time">15</span>sec Ver
+                </p>
+              </nav>
+              <nav class="movie_parts2">
+                <a href="URL" title="60秒の動画"></a>
+                <img src="images/movie-2.jpg" alt="60秒の動画">
+                <hr>
+                <p>
+                  MOVIE<br>
+                  <span class="main-time">60</span>sec Ver
+                </p>
+              </nav>
+              <nav class="movie_parts3">
+                <a href="URL" title="180秒の動画"></a>
+                <img src="images/movie-3.jpg" alt="180秒の動画">
+                <hr>
+                <p>
+                  MOVIE<br>
+                  <span class="main-time">180</span>sec Ver
+                </p>
+              </nav>
+            </section>
+      </article>
+        <!-- article-sec:2 ＋　form -->
+      <article id="scene_top">
+        <!--一部は文字固定、イメージとセリフはシーンによって変化する。-->
+        <section id="scene_introduction">
+          <div id="scene_text_fixd">
+            <span>いつも新しい！</span>
+            <h2>姫路の魅力を<br>さがす</h2>
+          </div>
+          <aside id="scene_text_changed">
+            <span>興味をそそられる！</span>
+            <img src="images/carousel_h1.png" alt="シーン１選択ののんさんの画像">
+          </aside>
+        </section>
+        <!-- カルーセルのように選択できる6つのシーン -->
+        <article id="scene_carousels">
+          <section id="carousel_1">
+            <a href="URL" title="歴史あるひめじかん"></a>
+            <nav class="scene_text">
+              <p>HIME-<br>JIKAN<br>SCENE</p>
+              <hr>
+              <h3>
+                <span class="scene_number">1</span>
+                <span class="scene_reviewtext">歴史</span>ある<br>ひめじかん
+              </h3>
+            </nav>
+            <nav class="scene_image">
+              <img src="images/carousel_1.png"alt=シーン1選択画像>
+              <p>more</p>
+            </nav>
+          </section>
+
+          <section id="carousel_2">
+            <a href="URL" title="アートなひめじかん"></a>
+            <nav class="scene_text">
+              <p>HIME-<br>JIKAN<br>SCENE</p>
+              <hr>
+              <h3>
+                <span class="scene_number">2</span>
+                <span class="scene_reviewtext">アート</span>な<br>ひめじかん
+              </h3>
+            </nav>
+            <nav class="scene_image">
+              <img src="images/carousel_2.png"alt=シーン2選択画像>
+              <p>more</p>
+            </nav>
+          </section>
+          
+          <section id="carousel_3">
+            <a href="URL" title="ひめじうまいもの"></a>
+            <nav class="scene_text">
+              <p>HIME-<br>JIKAN<br>SCENE</p>
+              <hr>
+              <h3>
+                <span class="scene_number">3</span>
+                ひめじ<br><span class="scene_reviewtext">うまいもの</span>
+              </h3>
+            </nav>
+            <nav class="scene_image">
+              <img src="images/carousel_3.jpg"alt=シーン3選択画像>
+              <p>more</p>
+            </nav>
+          </section>
+
+          <section id="carousel_4">
+            <a href="URL" title="まちなかでひめじかん"></a>
+            <nav class="scene_text">
+              <p>HIME-<br>JIKAN<br>SCENE</p>
+              <hr>
+              <h3>
+                <span class="scene_number">4</span>
+                <span class="scene_reviewtext">まちなか</span>で<br>ひめじかん
+              </h3>
+            </nav>
+            <nav class="scene_image">
+              <img src="images/carousel_4.jpg"alt=シーン4選択画像>
+              <p>more</p>
+            </nav>
+          </section>
+
+          <section id="carousel_5">
+            <a href="URL" title="足を伸ばしてひめじかん"></a>
+            <nav class="scene_text">
+              <p>HIME-<br>JIKAN<br>SCENE</p>
+              <hr>
+              <h3>
+                <span class="scene_number">5</span>
+                <span class="scene_reviewtext">足を伸ばして</span><br>ひめじかん
+              </h3>
+            </nav>
+            <nav class="scene_image">
+              <img src="images/carousel_5.jpg"alt=シーン5選択画像>
+              <p>more</p>
+            </nav>
+          </section>
+
+          <section id="carousel_6">
+            <a href="URL" title="実はエシカルひめじかん"></a>
+            <nav class="scene_text">
+              <p>HIME-<br>JIKAN<br>SCENE</p>
+              <hr>
+              <h3>
+                <span class="scene_number">6</span>
+                実は<span class="scene_reviewtext">エシカル</span><br>ひめじかん
+              </h3>
+            </nav>
+            <nav class="scene_image">
+              <img src="images/carousel_6.JPG"alt=シーン6選択画像>
+              <p>more</p>
+            </nav>
+          </section>
+        </article>
+      </article>
+        <!-- カルーセルの選択ボタン -->
+        <form id="scene_select">
+          <label id="scene_select"><input for="scene_select" type="radio" name="carousel" checked>1</label>
+          <label id="scene_select"><input for="scene_select" type="radio" name="carousel">2</label>
+          <label id="scene_select"><input for="scene_select" type="radio" name="carousel">3</label>
+          <label id="scene_select"><input for="scene_select" type="radio" name="carousel">4</label>
+          <label id="scene_select"><input for="scene_select" type="radio" name="carousel">5</label>
+          <label id="scene_select"><input for="scene_select" type="radio" name="carousel">6</label>
+        </form>
+      <!-- デジタルブックへのリンク -->
+      <section id="digital_book">
+        <a href="URL" title="デジタルブックへ"></a>
+        <nav id="book_textarea">
+          <span id="book_text1">もっと！</span>
+            <br>
+          <span id="book_text2">
+            姫路の魅力をつめこんだ<br>
+            ひめじかんの<br>
+            デジタルブックも公開中！
+          </span>
+            <br>
+          <span id="book_text3">
+            ひめじかんをデジタルブックでお気軽に閲覧できます。<br>
+            お出かけの際もとっても便利！ぜひご利用ください。
+          </span>
+        </nav>
+        <ul id="book_image">
+          <li><img src="images/column-1.jpg" alt="コラム画像1"></li>
+          <li><img src="images/column-2.png" alt="コラム画像2"></li>
+        </ul>
+      </section>
+      <!-- section:2 -->
+    <article id="modelcourse-top">
+      <!-- モデルコースの見出し -->
+      <section id="modelcourse-headline">
+        <p>とっておき！のひめじかん</p>
+        <nav id="modelcourse-headline-title">
+          <p>MODEL<br>COURSE</p>
+          <h2>おすすめ！<br>目的別モデルコース</h2>
+          <img src="images/modelcourse-top.png" alt="モデルコース見出し">
+        </nav>         
+      </section>
+      <!-- 2つのコース,それぞれsection -->
+      <section id="modelcourse-menu">
+        <section id="m_course1">
+          <a href="URL" title="心洗われるゆったりコース">
+            <nav class="modelcourse-text1">
+              <p>Refresh Course</p>
+              <h3>心洗われるゆったりコース</h3>
+            </nav>
+            <nav class="modelcourse-image1">
+              <img src="images/modelcourse-1.jpg" alt="心洗われるゆったりコース">
+              <p>MORE</p>
+            </nav>
+          </a>
+          <p>
+            気兼ねなく、流れる時間を自由気ままに楽しむのも旅の醍醐味のひと<br>
+            つ。心が洗われるような、ゆったりした「ひめじかん」を味わってくださ<br>
+            い。
+          </p>
+        </section>
+
+        <section id="m_course2">
+          <a href="URL" title="ひめじの映えに出会えるコース">
+            <nav class="modelcourse-text2">
+              <p>photogenic Course</p>
+              <h3>ひめじの映えに出会えるコース</h3>
+            </nav>
+            <nav class="modelcourse-image2">
+              <img src="images/modelcourse-2.jpg" alt="ひめじの映えに出会えるコース">
+              <p>MORE</p>
+            </nav>
+          </a>
+          <p>
+            世界遺産・姫路城をはじめ、姫路には思わず写真に収めたくなる「映え<br>
+            スポット」がたくさん。お気に入りの一枚を探して、あなただけの「ひめじ<br>
+            かん」を発信してください。
+          </p>
+        </section>        
+      </section>
+    </article>
+
+    <article id="interview-top">
+      <!-- インタビュー、画像と一言 -->
+      <section id="i-image">
+        <img id="i-profile" src="images/profile.jpg" alt="プロフィール画像">
+        <h2>
+          たくさんの魅力に出会える姫路、<br>
+          またゆっくり来たいです
+        </h2>
+        <img id="i-speech-bubble" src="images/interview-1.jpg" alt="吹き出し枠">
+      </section>
+
+      <section id="i-sentence">
+        <p>
+          兵庫県神河町で生まれ育った私にとって、姫路は「一番近い都会」<br>
+          でした。
+          <br>
+          <br>
+          今回、久しぶりに姫路に来て、知らない場所がたくさんあってびっ<br>
+          くりしました。<br>
+          姫路はお洋服を買ったり遊びに行く場所でしたが、駅前には展望<br>
+          台もできて、さらに魅力的なスポットになりましたね。<br>
+          姫路城も好古園もとても素敵だったので、また機会があったら好<br>
+          古園で抹茶を味わって、ゆっくり見て回りたいです。
+          <br>
+          <br>
+          姫路はグルメも充実していますよね。ヤマサ蒲鉾大手前店の「城下<br>
+          町どっぐ」は、とってもおいしかったです。<br>
+          私も実家で生姜醤油のおでんを食べていたのですが、今度はお<br>
+          店でも食べてみたいです。<br>
+          地元にいる妹がお洒落なカフェとか姫路の情報を教えてくれるの<br>
+          で、私も情報のアップデートはしています。
+          <br>
+          <br>
+          みなさんもぜひ、ここ姫路で自由にのんびり、「ひめじかん」を楽し<br>
+          んでくださいね。
+        </p>
+        <!-- インタビュー見出し -->
+        <aside id="i-names">
+          <p>
+            INTERVIEW<span id="i-name">のんさん</span>
+          </p>
+          <img id="i_name-bubble" src="images/interview-2.jpg" alt="インタビュー枠">
+          <img id="i_vertical-line" src="images/Vertical line.png" alt="縦ライン用">
+        </aside>
+      </section>
+    </article>
+    </main>
+
+    <footer>
+      <p><img src="images/rogo-main.png"></p>
+      <!-- 問い合わせ先、プライバシーポリシー等 -->
+      <nav id="footer_nav">
+        <aside id="footer_menu">
+          &#40;<span>問い合わせ先</span>&#41;
+          姫路市 観光スポーツ局 観光文化部 観光課
+          〒670-8501 兵庫県姫路市安田四丁目1番地
+          電話番号：079-221-2121　メール：kanko&#64;city.himeji.lg.jp
+          開庁時間：月曜日から金曜日の午前8時35分から午後5時20分まで
+          &#40;土曜日・日曜日、祝日、12月29日から翌年1月3日までは閉庁&#41;
+        </aside>
+        <ul id="footer_link">
+          <li><a href="URL">ひめじかんウェブアクセシビリティ取組確認について</a></li>
+          <li><a href="URL">ひめじかんウェブアクセシビリティ取組確認・評価表</a></li>
+          <li><a href="URL">プライバシーポリシー</a></li>
+          <li><a href="URL">著作権・リンク・免責事項</a></li>
+        </ul>
+      </nav>
+      <!-- バナー4つ一覧 -->
+        <ul id="footer_bannar">
+          <li><a href="URL" title="姫路城世界遺産登録"><img src="images/hanko.png" alt="姫路城世界遺産登録"></a></li>
+          <li>
+            <a href="URL" title="姫路城公式サイトへ">
+              <img src="images/siromaruhime.png" alt="姫路城公式サイト">
+              <span id="footer_bannar_text2-1">世界遺産・国宝</span>
+              <span id="footer_bannar_text2-2">姫路城</span>
+            </a>
+          </li>
+          <li><a href="URL" title="姫路市公式サイトへ"><img src="images/bunner-1.png" alt="姫路市公式サイトへ"></a></li>          
+          <li>
+            <a href="URL" title="ひめのみち公式サイトへ">
+              <span id="footer_bannar_text4-1">姫路観光なび</span>
+              <span id="footer_bannar_text4-2">ひめのみち</span>
+            </a>
+          </li>
+        </ul>
+        <p>Copyright(c)Himeji City.All right Reserved.</p>
+    </footer>
+  </body>
+</html>
