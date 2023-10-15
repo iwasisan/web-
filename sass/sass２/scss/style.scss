@@ -1,0 +1,820 @@
+
+//フォント、カラーを定義
+$fontsize : 13px;
+
+$font : "Noto Sans JP",sans-serif;
+
+$main-color : rgb(68, 68, 68);
+$sub-color : rgb(255, 63, 63);
+
+// 共通
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.animation-box{
+  max-width: 500px;
+  width: 100%;
+  height: 20px;
+  background: rgb(188, 255, 216);
+  animation-name: bar;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  position: absolute;
+  z-index: 4;
+}
+
+@keyframes bar {
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+.animation-box-1{
+  max-width: 500px;
+  width: 100%;
+  height: 20px;
+  background: rgb(47, 253, 133);
+  animation-name: bar-1;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.29,1.14,.8,.02);
+  animation-delay:1s;
+  z-index: 1;
+  position: absolute;
+  top: 130px
+  
+}
+
+@keyframes bar-1{
+  from{
+    width: 0%;
+  }
+  to{
+    width: 100%;
+  }
+}
+// position: absolute;同士だからz-indexが効く
+// function関数
+// half-size()の()内の数値を2で割って返す関数を作る
+// 
+@function half-size($size){
+  @return round($size / 2);
+}
+// round関数があるので小数点以下は四捨五入です。
+
+// ヘッダー
+header{
+  display: flex;
+  justify-content: center;
+  padding: 0 30px;
+
+// ロゴ部分
+  .head-logo{
+    margin-right: calc(50% - 300px);
+    a{
+      img{
+        width: 100%;
+        min-width: half-size(100px);
+      }
+    }
+  }
+  section{
+    display: flex;
+  }
+}
+
+$tab: 768px;
+
+#head-navi{
+  ul{
+    display: flex;
+    column-gap: half-size(80px);
+    padding-right: half-size(80px);
+
+    a{
+      font-family: $font;
+      color: $main-color;
+      font-size: 12px;
+    }
+    //メディアクエリもネスト可 
+    @media screen and (max-width:($tab)) {
+      visibility: hidden;
+    } 
+  }
+//  お問い合わせ部分
+  .head-form{
+    background-color: rgba($color: #fc3434, $alpha: 0.7);
+    padding: 40px 50px;
+    transition: background-color 0.3s;
+
+    &:hover{
+        background-color: mix(#155336,#474242, $weight: 0.5);
+      }
+
+    a{
+      color: lighten($color: #000000, $amount: 100%);
+
+      //ハンバーガーメニューへの切り替えをしたい。
+      @media screen and (max-width:($tab)) {
+      visibility: hidden;
+      } 
+    }
+  }
+}
+
+
+
+// #site-title
+// clamp関数でvw単位を使用の際、文字サイズの可変が出来る。
+#site-title{
+  display: flex;
+  column-gap: 40px;
+  padding-left: 40px;
+
+  hgroup{
+    white-space: nowrap;
+
+    h1{
+      font-size:clamp(40px,5vw,10vw) ;
+      font-family: $font;
+    }
+
+    p{
+      font-size: $font;
+      position: relative;
+      bottom: 30px;
+    }
+  }
+
+  img{
+    width: clamp(250px,calc(100% - 500px),100%);
+    padding-left: 135px;
+  }
+}
+
+
+$pad: 0px 40px;
+$fontsize2:clamp(20px,3vw,5vw);
+// グローバル変数、関数を変数に入れる事も可能
+// #site-purpose
+
+#site-purpose{
+  display: flex;
+  justify-content: flex-start;
+  padding: $pad;
+
+  h3{
+    font-size:$fontsize2 ;
+    white-space: nowrap;
+    margin: 0 auto;
+    color: #ffffff;
+    position: relative;
+    bottom: 50px;
+
+    .test1{
+      background-color: $sub-color;
+      box-decoration-break: clone;
+      z-index: 2;
+
+      span{
+        padding-left: 25%;
+        background-color: #ffffff;
+        z-index: 0;
+      }
+    }
+    @media screen and (max-width:($tab)) {
+      margin-right:auto;
+      position: relative;
+      right: calc(30% - 30px);
+    }
+  }
+}
+
+
+// site-media
+// @extendのためだけのセレクタ
+%m-sele{
+  img{
+    width: 100%;
+    max-width: calc(100% - 10px);
+    min-width: 220px;
+  }
+
+  p{
+    font-size: clamp(6px,1vw,12px);
+    color: $main-color;
+    white-space: nowrap;
+    width: fit-content;
+    max-width: 200px;
+  }
+  
+  span{
+    margin-right: 20px;
+    border: solid 1px $sub-color;
+    border-radius: 20px;
+    padding: 2px 3px;
+  }
+}
+// 
+
+#site-media {
+  padding: 0 50px;
+}
+
+.media-select{
+  display: flex;
+  justify-content: flex-start;
+  column-gap: clamp(20px,1vw,40px);
+
+// flexを広げた際、隠れたスクロール部分がみえてしまう。
+  li{
+    @extend %m-sele;
+    }
+    // .media-select:ulに対しスクロールバー追加
+    // 上下のバーを消したい。使わないし。
+    // li内のimgに対し最小値増加
+    @media screen and (max-width:($tab)){
+      overflow: scroll;
+
+      li{
+        img{
+            min-width: 450px;
+        }
+        p{
+          font-size: 14px;
+        }
+      }
+    }
+}
+
+// $tab: 768px;
+// tabという名のmixin,768px以下になったら＠contentの処理
+
+@mixin tab {
+  @media screen and (max-width: ($tab)) {
+    @content;
+  }
+}
+// @include tab{}の{}部分が@contentにあたります。
+@include tab(){
+
+}
+
+// story
+
+#story{
+  // ローカル変数
+  $loclasize:calc(100% - 50px);
+
+  background-color: lighten($color: #ffc4c4, $amount: 0.8);
+  padding: $pad;
+
+  #story-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+
+    // 786px以下になったらflex解除
+    @include tab(){
+      display: block;
+    }
+
+    .story-left{
+      display: flex;
+      column-gap: 50px;
+      flex-direction: row-reverse;
+
+      // ここの文字がレスポンシブにならない
+      h2{
+        writing-mode: vertical-rl;
+        font-size: clamp(20px, 1vw, 40px);
+      }
+
+      img{
+        width: calc(100% - 300px);
+        min-width: 120px;
+        object-fit: cover;
+      }
+
+      img:nth-child(3){
+        position: relative;
+        top: 100px;
+        height: 50%;
+      }
+
+      @include tab(){
+        h2{
+          font-size: 30px;
+          padding-left: 50px;
+        }
+
+        img{
+          width: calc(70% - 300px);
+        }
+
+        img:nth-child(3){
+        position: relative;
+        top: 20px;
+        height: 50%;
+        }
+      }
+    }
+
+      
+
+      // 企業の成長ストーリーから右
+      .story-right{
+        
+      img{
+        width: $loclasize;
+        min-width: 220px;
+
+        @include tab(){
+          margin-top: 10px;
+          width: calc(100% - 90px);
+        }
+      }
+
+      p{
+        font-size: $fontsize;
+        width: $loclasize;
+        min-width: 200px;
+      }
+    }
+  }
+}
+
+
+// #site-feature
+
+@mixin sectitle ($value){
+  width: 100%;
+  font-size: $value;
+  font-family: $font;
+}
+
+#site-feature{
+  padding: $pad;
+  
+  h2{
+    @include sectitle(25px);
+  }
+
+// .case-1の設定、画像の大きさ変更等はそれぞれ設定
+  $lo-pad: calc(43% - 100px) 80px;
+
+  @mixin img ($value) {
+    width: calc(100% - 100px);
+    padding: $lo-pad;
+    background-color: $value;
+  }
+
+  @mixin div{
+    display: flex;
+    column-gap: 30px;
+    position: relative;
+    bottom: 20%;
+  }
+
+  @mixin p{
+    font-size: clamp(12px,1vw,18px);
+    color: $main-color;
+  }
+
+  %case{
+    width: calc(100% - 50px);
+    min-width: 300px;
+  }
+// .case-1の設定ここまで
+
+  ul{
+    display: flex;
+    column-gap: 80px;
+
+    @include tab(){
+      overflow: scroll;
+      column-gap: 30%;
+    }
+
+    .case-1{
+      width: calc(100% - 50px);
+      min-width: 300px;
+
+      img{
+        width: calc(100% - 115px);
+        padding: $lo-pad;
+        background-color: #ffc4c4;
+      }
+
+      div{
+        display: flex;
+        column-gap: 30px;
+        position: relative;
+        bottom: 20%;
+
+        p{
+          font-size: clamp(12px,1vw,18px);
+          color: $main-color;
+        }
+      }
+    }
+
+    .case-2{
+      @extend%case;
+
+      img{
+        @include img(rgb(215, 217, 252));
+        width: calc(100% - 130px);
+      }
+
+      div{
+        @include div();
+
+        p{
+          @include p();
+        }
+      }
+    }
+
+    .case-3{
+      @extend%case;
+
+      img{
+        @include img(rgb(139, 123, 123));
+        width: calc(100% - 135px);
+      }
+
+      div{
+        @include div();
+
+        p{
+          @include p();
+        }
+      }
+    }
+    @include tab(){
+      .case-1{
+        img{
+          min-width: calc(100% - 35px);
+        }
+      }
+      // .case-1以降のli
+      .case-1~li{
+        img{
+          min-width: calc(100% - 55px);
+        }
+      }
+    }
+  }
+}
+
+// #site-service
+
+#site-service{
+  padding: $pad;
+  border-bottom: solid 1px;
+
+  hgroup{
+    white-space: nowrap;
+    line-height: 1.5;
+
+    h2{
+      @include sectitle(44px)
+    }
+    p{
+      font-size: $fontsize;
+    }
+    // h2要素に対しp要素は隣接してる為：＋で指定出来る
+    // 直後に隣接している要素
+    @include tab(){
+      white-space: normal;
+      h2{
+        font-size: 30px;
+        + p{
+          min-width: 80px;
+        }
+      }
+    }
+  }
+
+  // li img
+  @mixin service-img($value){
+    width: calc(100% - 30px);
+    min-width: 400px;
+    padding-bottom: 2px;
+    background-color: $value;
+  }
+
+  // li p
+  @mixin service-p{
+    font-family: $font;
+    font-size: 15px;
+    color: $main-color;
+    position: relative;
+  }
+
+  // li p after
+  @mixin service-p-af($value){
+    content: "";
+    width: 5%;
+    height: 100%; 
+    position: absolute;
+    top: 0;
+    left: calc(100% - 80px);
+    border: solid 1px $value;
+    border-radius: 50%;
+  }
+
+  ul{
+    display: flex;
+    column-gap: 40px;
+
+    @include tab(){
+      display: block
+    }
+
+    // li 1
+    .Service-1{
+      img{
+        @include service-img(green);
+      }
+      
+      p{
+        @include service-p();
+
+        &::after{
+          @include service-p-af(green);
+        }
+      }
+    }
+
+      // li 2
+    .Service-2{
+      img{
+        @include service-img(rgb(36, 47, 197));
+      }
+      
+      p{
+        @include service-p();
+
+        &::after{
+          @include service-p-af(rgb(36, 47, 197));
+        }
+      }
+    }
+
+      // li 3
+    .Service-3{
+      img{
+        @include service-img(rgb(243, 153, 236));
+      }
+      
+      p{
+        @include service-p();
+
+        &::after{
+          @include service-p-af(rgb(243, 153, 236));
+        }
+      }
+    }
+  }
+}
+
+
+// #site-awards
+#site-awards{
+  padding: $pad;
+  width: calc(100% - 100px);
+  max-width: 1100px;
+  margin: 0 auto 100px;
+
+  // a要素の疑似要素、ホバー纏め
+  a{
+    color: $main-color;
+    border-bottom: solid 1px;
+    transition: all 0.3s ease;
+
+    &::before{
+      content: ">";
+    }
+    &:hover{
+      background-color: #bdc9c3;
+    }
+  }
+
+  aside{
+    display: flex;
+    .awards{
+      flex: 1;
+      width: calc(100% - 30px);
+
+      %asidep{
+        font-size: clamp(#{$fontsize},1vw,#{$fontsize} + 4px);
+        white-space: nowrap;
+      }
+
+      p{
+        @extend%asidep;
+      }
+    }
+// 変数を用いた演算での表現も可能、$fontsize:12
+    .client{
+      flex: 1;
+      width: calc(100% - 30px);
+
+      p{
+        @extend%asidep;
+      }
+
+      img{
+        width: calc(100% - 50px);
+      }
+    }
+    @include tab(){
+      display: block
+    }
+  }
+}
+
+// #recruit
+#recruit{
+  padding: $pad;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  width: 1200px;
+  transition: all 0.7s ease;
+  background-color: #ffb4b4;
+  margin-bottom: 40px;
+// ここのtransition: all 0.7s ease;効かない
+
+  h2{
+    flex: 1;
+    font-size: 60px;
+    transition: all 0.7s ease;
+  }
+
+  nav{
+    flex: 1;
+    margin-top: auto;
+    transition: all 0.7s ease;
+
+    p{
+      font-size:$fontsize ;
+      position: relative;
+
+      &::after{
+        content: ">";
+        border: solid 2px;
+        border-radius: 30%;
+        position: absolute;
+        top: -30px;
+      }
+    }
+    // h3とその隣接要素のpに対しレスポンシブした際
+    // の変化を付ける
+    @include tab(){
+      h3{
+        font-size: 20px;
+        position: relative;
+        right: calc(70% - 120px);
+        max-width: 200px;
+        br {display: none;}
+      //ただ、ｐを隠すと、ｐの疑似要素の「＞」も隠れる。
+      // 「＞」用のspanとかhtmlに付けたら行けるかも。
+        + p{
+          visibility: hidden;
+        }
+      }
+    }
+
+  }
+  &:hover{
+    h2,nav{
+      color: #ffffff;
+    }
+    background-image: url(/img/business-area3.webp);
+    background-size: cover;
+  }
+}
+
+// #contact
+
+#contact{
+  @extend #recruit;
+  background-color: #d5f1e4;
+
+  &:hover{
+    background-image: url(/img/business-area2.webp);
+  }
+
+  nav{
+    margin-bottom: auto;
+  }
+}
+
+// footer
+footer{
+
+  $main-color:rgb(255, 254, 254);
+  $fontsize3:clamp(15px,1vw,20px);
+
+  background-color: #838383;
+  width: 1200px;
+  margin: 0 auto;
+
+  h2{
+    color: $main-color;
+    font-family: $font;
+    font-size: $fontsize3;
+  }
+
+  #foot-sec1{
+    display: flex;
+
+// プレースホルダーセレクタ
+    %foot-li{
+      flex: 1;
+      white-space: nowrap;
+      font-size: $fontsize;
+    }
+
+    aside{
+      @extend%foot-li;
+      font-weight: 600;
+      line-height: 1;
+      color: $main-color
+    }
+
+    nav{
+      @extend%foot-li;
+      display: flex;
+      column-gap: 30px;
+      align-items: baseline;
+
+      ul{
+        line-height: 3;
+      }
+
+      a{
+          color: $main-color;
+        }
+    }
+  }
+}
+
+#foot-sec2{
+  margin-top: 130px;
+  padding: $pad;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  p{
+    a{
+      color: rgb(255, 255, 255);
+      border-bottom: solid 1px beige;
+
+      &::before{
+        content: ">";
+      }
+    }
+  }
+
+  .bnr{
+    position: relative;
+    left: 30%;
+    img{
+      width: calc(80% / 2 - 140px);
+      padding: 10px;
+    }
+  }
+}
+
+#foot-sec3{
+  display: flex;
+  padding: $pad;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+
+  ul{
+    display: flex;
+    column-gap: 50px;
+
+    a{
+      color: $main-color;
+      font-size: $fontsize;
+    }
+  }
+}

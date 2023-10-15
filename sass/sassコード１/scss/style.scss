@@ -1,0 +1,257 @@
+@mixin font-style($font-size,$font-weight){
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+.test{
+  content:"";
+    display:block;
+    width:280px;
+    height:1px;
+    background-color:#0097A7;
+    position:absolute;
+    bottom:0px;
+    right:0px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 calc(10% - 80px);
+    #site-title{
+      display: flex;
+      column-gap: 100px;
+    }
+}
+
+
+.title-a{
+  h1{
+    @include font-style(25px, 300);
+    span{
+      font-size: 12px;
+    }
+  }
+}
+
+.title-b{
+        display: flex;
+        position: relative;
+        top: 23px;
+      p{
+        font-size: 12px;
+        color: rgb(160, 160, 160);
+      }
+}
+
+.site-navi{
+  li{
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 2;
+  }
+}
+
+main{
+  padding: 0 calc(10% - 80px);
+  #main-title{
+    p{
+      font-size: 20px;
+      position: relative;
+      top: 35px;
+    }
+    h2{
+      @include font-style(35px, 600);
+    }
+  }
+  p{
+    font-size: 13px;
+    position: relative;
+    bottom: 30px;
+  }
+}
+
+#main-link{
+  ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6,1fr);
+    gap: 15px;
+  li{
+    list-style: none;
+    height: fit-content;
+  }img{
+    width: 100%;
+    vertical-align: top;
+  }
+    }
+  p{
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    top: 30px;
+
+    &::after{
+      @extend.test;
+      position: relative;
+      left: 400px;
+    }
+  }
+  }a{
+    text-decoration: none;
+  }
+
+@mixin layout($display,$gridcolumns,$gridrows){
+  display: $display;
+  grid-template-columns: $gridcolumns;
+  grid-template-rows: $gridrows;
+}
+
+
+.test-2{
+  text-decoration: none;
+      display: block;
+      text-align: end;
+      font-size: 13px;
+}
+
+
+
+#main-sevis{
+  h2{
+    padding: 40px 0px;
+    @include font-style(25px, 300);
+  }
+  nav{
+    ul{
+      @include layout(grid,repeat(3,1fr),repeat(2,1fr));
+      gap: 20px;
+    }li{
+      list-style: none;
+      max-width: fit-content;
+      position: relative;
+
+      &::before{
+        @extend.test;
+        width:1px;
+        height:80px;
+        display:inline-block;
+        position:absolute;
+        top:-12px;
+        left:-15px;
+      }
+    }a{
+      @extend.test-2
+    }
+  }
+}
+
+#news{
+  h2{
+    padding: 40px 0px;
+    @include font-style(25px, 300);
+  }
+  li{
+    list-style: none;
+    padding-bottom: calc(15% - 120px);
+    position: relative;
+
+    &::after{
+      @extend.test;
+      position:absolute;
+      width: 100%;
+      bottom: 50px;
+      right: 0px;
+    }
+  a{
+    display: flex;
+    column-gap: 100px;
+    color: rgb(59, 59, 59);
+    }
+    }
+  a{
+    @extend.test-2
+  }
+}
+
+#news li:nth-child(1){
+  position: relative;
+
+  &::before{
+    @extend.test;
+    position:absolute;
+      width: 100%;
+      top: -40px;
+      right: 0px;
+  }
+}
+
+.test-3{
+  display: flex;
+  column-gap: 50px;
+}
+
+
+// フッター
+footer{
+  margin-top: 100px;
+  padding: 0 40px;
+  article{
+    @extend.test-3;
+    #foot-1{
+      p{
+        @include font-style(25px, 300);
+      span{
+      font-size: 12px;
+        }
+      }
+      }
+    #foot-2{
+      p{
+        font-size: 12px;
+        color: rgb(160, 160, 160);
+        position: relative;
+        top: 25px;
+      }
+    }
+  }
+  aside{
+    @extend.test-3;
+    justify-content: space-between;
+    nav{
+      @extend.test-3;
+      p{
+        font-size: 12px;
+      }
+    }
+    p{
+      font-size: 12px;
+    }
+  }
+  .contact{
+    padding-bottom: 50px;
+    text-align: center;
+    position: relative;
+    top: 80px;
+    &::before{
+      @extend.test;
+      top: 30px;
+      right: 350px;
+    }
+  }
+}
+
+
+
+// 疑似要素で追加した線を使いまわそうとしたが、エラーになる。
+// li{
+     // list-style: none;
+      // max-width: fit-content;
+      // background-color: aquamarine;
+      // &::before{
+       // @extend &::after
+      // } 
+      // 変数を呼び出すみたいに設定だけを作って呼び出す形にしたら出来た。
